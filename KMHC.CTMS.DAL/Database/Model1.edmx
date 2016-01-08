@@ -1,0 +1,804 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="tmpmModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tm_pm_company">
+          <Key>
+            <PropertyRef Name="COMPANYID" />
+          </Key>
+          <Property Name="COMPANYID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="COMPANYTYPE" Type="varchar" MaxLength="50" />
+          <Property Name="COMPANRYCODE" Type="varchar" MaxLength="50" />
+          <Property Name="ENAME" Type="varchar" MaxLength="100" />
+          <Property Name="CNAME" Type="varchar" MaxLength="100" />
+          <Property Name="COMPANYCATEGORY" Type="varchar" MaxLength="50" />
+          <Property Name="CITY" Type="varchar" MaxLength="50" />
+          <Property Name="COUNTYTYPE" Type="varchar" MaxLength="50" />
+          <Property Name="COMPANYLEVEL" Type="varchar" MaxLength="50" />
+          <Property Name="FATHERCOMPANYID" Type="varchar" MaxLength="50" />
+          <Property Name="FATHERTYPE" Type="varchar" MaxLength="50" />
+          <Property Name="FATHERID" Type="varchar" MaxLength="50" />
+          <Property Name="ADDRESS" Type="varchar" MaxLength="100" />
+          <Property Name="LEGALPERSON" Type="varchar" MaxLength="100" />
+          <Property Name="LINKMAN" Type="varchar" MaxLength="50" />
+          <Property Name="TELNUMBER" Type="varchar" MaxLength="50" />
+          <Property Name="LEGALPERSONID" Type="varchar" MaxLength="50" />
+          <Property Name="BUSSINESSLICENCENO" Type="varchar" MaxLength="100" />
+          <Property Name="BUSSINESSAREA" Type="varchar" MaxLength="1000" />
+          <Property Name="ACCOUNTCODE" Type="varchar" MaxLength="100" />
+          <Property Name="BANKID" Type="varchar" MaxLength="100" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="50" />
+          <Property Name="ZIPCODE" Type="varchar" MaxLength="50" />
+          <Property Name="FAXNUMBER" Type="varchar" MaxLength="50" />
+          <Property Name="CHECKSTATE" Type="varchar" MaxLength="1" />
+          <Property Name="EDITSTATE" Type="varchar" MaxLength="1" />
+          <Property Name="CREATEUSERID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATEDATE" Type="datetime" Precision="0" />
+          <Property Name="UPDATEUSERID" Type="varchar" MaxLength="50" />
+          <Property Name="UPDATEDATE" Type="datetime" Precision="0" />
+          <Property Name="CREATEPOSTID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATEDEPARTMENTID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATECOMPANYID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERPOSTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERDEPARTMENTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERCOMPANYID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tm_pm_department">
+          <Key>
+            <PropertyRef Name="DEPARTMENTID" />
+          </Key>
+          <Property Name="DEPARTMENTID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FATHERTYPE" Type="varchar" MaxLength="50" />
+          <Property Name="FATHERID" Type="varchar" MaxLength="50" />
+          <Property Name="COMPANYID" Type="varchar" MaxLength="50" />
+          <Property Name="DEPNAME" Type="varchar" MaxLength="200" />
+          <Property Name="DEPARTMENTBOSSHEAD" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DEPARTMENTDICTIONARYID" Type="varchar" MaxLength="50" />
+          <Property Name="DEPARTMENTFUNCTION" Type="varchar" MaxLength="2000" />
+          <Property Name="CHECKSTATE" Type="varchar" MaxLength="1" />
+          <Property Name="EDITSTATE" Type="varchar" MaxLength="1" />
+          <Property Name="CREATEUSERID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATEDATE" Type="datetime" Precision="0" />
+          <Property Name="UPDATEUSERID" Type="varchar" MaxLength="50" />
+          <Property Name="UPDATEDATE" Type="datetime" Precision="0" />
+          <Property Name="CREATEPOSTID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATEDEPARTMENTID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATECOMPANYID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERPOSTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERDEPARTMENTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERCOMPANYID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tm_pm_dotask">
+          <Key>
+            <PropertyRef Name="TASKID" />
+          </Key>
+          <Property Name="TASKID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TITLE" Type="varchar" MaxLength="50" />
+          <Property Name="MODELCODE" Type="varchar" MaxLength="50" />
+          <Property Name="MODELID" Type="varchar" MaxLength="50" />
+          <Property Name="ARRIVEDATE" Type="datetime" Precision="0" />
+          <Property Name="EXPIREDTIME" Type="datetime" Precision="0" />
+          <Property Name="ISCLOSED" Type="varchar" MaxLength="50" />
+          <Property Name="CLOSEDTIME" Type="varchar" MaxLength="50" />
+          <Property Name="OWENRID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERDEPARTMENTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERCOMPANYID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATETIME" Type="datetime" Precision="0" />
+          <Property Name="CREATEUSER" Type="varchar" MaxLength="50" />
+          <Property Name="EDITTIME" Type="datetime" Precision="0" />
+          <Property Name="EDITUSER" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERPOSTID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tm_pm_itemreport">
+          <Key>
+            <PropertyRef Name="TASKID" />
+          </Key>
+          <Property Name="TASKID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PRETASK" Type="varchar" MaxLength="50" />
+          <Property Name="SUBMITDATE" Type="datetime" Precision="0" />
+          <Property Name="SUBMITPROGRESS" Type="varchar" MaxLength="50" />
+          <Property Name="SUBMITREMARK" Type="varchar" MaxLength="200" />
+          <Property Name="PMANAGER" Type="varchar" MaxLength="50" />
+          <Property Name="ISCOMFIRM" Type="varchar" MaxLength="50" />
+          <Property Name="STARTDATE" Type="varchar" MaxLength="2000" />
+          <Property Name="COMFIRMDATE" Type="datetime" Precision="0" />
+          <Property Name="OWENRID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERDEPARTMENTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERCOMPANYID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATETIME" Type="datetime" Precision="0" />
+          <Property Name="CREATEUSER" Type="varchar" MaxLength="50" />
+          <Property Name="EDITTIME" Type="datetime" Precision="0" />
+          <Property Name="EDITUSER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tm_pm_post">
+          <Key>
+            <PropertyRef Name="POSTID" />
+          </Key>
+          <Property Name="POSTID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="POSTDICTIONARYID" Type="varchar" MaxLength="50" />
+          <Property Name="COMPANYID" Type="varchar" MaxLength="50" />
+          <Property Name="DEPARTMENTID" Type="varchar" MaxLength="50" />
+          <Property Name="DEPARTMENTNAME" Type="varchar" MaxLength="200" />
+          <Property Name="POSTNAME" Type="varchar" MaxLength="200" />
+          <Property Name="POSTFUNCTION" Type="varchar" MaxLength="2000" />
+          <Property Name="POSTNUMBER" Type="int" />
+          <Property Name="POSTLEVEL" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="POSTCOEFFICIENT" Type="varchar" MaxLength="50" />
+          <Property Name="SALARYLEVEL" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="POSTGOAL" Type="varchar" MaxLength="500" />
+          <Property Name="FATHERPOSTID" Type="varchar" MaxLength="50" />
+          <Property Name="UNDERNUMBER" Type="int" />
+          <Property Name="PROMOTEDIRECTION" Type="varchar" MaxLength="50" />
+          <Property Name="CHANGEPOST" Type="varchar" MaxLength="50" />
+          <Property Name="CHECKSTATE" Type="varchar" MaxLength="1" />
+          <Property Name="EDITSTATE" Type="varchar" MaxLength="1" />
+          <Property Name="CREATEUSERID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATEDATE" Type="datetime" Precision="0" />
+          <Property Name="UPDATEUSERID" Type="varchar" MaxLength="50" />
+          <Property Name="UPDATEDATE" Type="datetime" Precision="0" />
+          <Property Name="CREATEPOSTID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATEDEPARTMENTID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATECOMPANYID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERPOSTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERDEPARTMENTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERCOMPANYID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tm_pm_project">
+          <Key>
+            <PropertyRef Name="PROJECTID" />
+          </Key>
+          <Property Name="PROJECTID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ORDERNUMBER" Type="int" />
+          <Property Name="PROJECTNAME" Type="varchar" MaxLength="50" />
+          <Property Name="FATHERPROJECTID" Type="varchar" MaxLength="50" />
+          <Property Name="COSTTIME" Type="varchar" MaxLength="50" />
+          <Property Name="STARTDATE" Type="varchar" MaxLength="50" />
+          <Property Name="ENDDATE" Type="varchar" MaxLength="50" />
+          <Property Name="PROGRESS" Type="varchar" MaxLength="50" />
+          <Property Name="PROJECTREMARK" Type="varchar" MaxLength="2000" />
+          <Property Name="OWENRID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERPOSTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERDEPARTMENTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERCOMPANYID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATETIME" Type="datetime" Precision="0" />
+          <Property Name="CREATEUSER" Type="varchar" MaxLength="50" />
+          <Property Name="EDITTIME" Type="datetime" Precision="0" />
+          <Property Name="EDITUSER" Type="varchar" MaxLength="50" />
+          <Property Name="PMANAGER" Type="varchar" MaxLength="50" />
+          <Property Name="ISCOMFIRM" Type="varchar" MaxLength="50" />
+          <Property Name="REALFINISHDATE" Type="datetime" Precision="0" />
+          <Property Name="RESULTSCORE" Type="varchar" MaxLength="50" />
+          <Property Name="SUGGESTIONS" Type="varchar" MaxLength="2000" />
+          <Property Name="BUDGET" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="REALCOST" Type="decimal" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="tm_pm_task">
+          <Key>
+            <PropertyRef Name="TASKID" />
+          </Key>
+          <Property Name="TASKID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PROJECTID" Type="varchar" MaxLength="50" />
+          <Property Name="PRETASKID" Type="varchar" MaxLength="50" />
+          <Property Name="FATHERTASKID" Type="varchar" MaxLength="50" />
+          <Property Name="ORDERNUMBER" Type="int" />
+          <Property Name="TASKNAME" Type="varchar" MaxLength="200" />
+          <Property Name="COSTTIME" Type="varchar" MaxLength="50" />
+          <Property Name="STARTDATE" Type="datetime" Precision="0" />
+          <Property Name="ENDDATE" Type="datetime" Precision="0" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="50" />
+          <Property Name="PROGRESS" Type="varchar" MaxLength="50" />
+          <Property Name="TASKREMARK" Type="varchar" MaxLength="2000" />
+          <Property Name="OWENRID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERPOSTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERDEPARTMENTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERCOMPANYID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATETIME" Type="datetime" Precision="0" />
+          <Property Name="CREATEUSER" Type="varchar" MaxLength="50" />
+          <Property Name="EDITTIME" Type="datetime" Precision="0" />
+          <Property Name="EDITUSER" Type="varchar" MaxLength="50" />
+          <Property Name="PMANAGER" Type="varchar" MaxLength="50" />
+          <Property Name="ISCOMFIRM" Type="varchar" MaxLength="50" />
+          <Property Name="REALFINISHDATE" Type="datetime" Precision="0" />
+          <Property Name="RESULTSCORE" Type="varchar" MaxLength="50" />
+          <Property Name="SUGGESTIONS" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="tm_pm_user">
+          <Key>
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="USERID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="50" />
+          <Property Name="PHONE" Type="varchar" MaxLength="50" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="50" />
+          <Property Name="ISCLOSED" Type="varchar" MaxLength="50" />
+          <Property Name="POSTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWENRID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERDEPARTMENTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERCOMPANYID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATETIME" Type="datetime" Precision="0" />
+          <Property Name="CREATEUSER" Type="varchar" MaxLength="50" />
+          <Property Name="EDITTIME" Type="datetime" Precision="0" />
+          <Property Name="EDITUSER" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERPOSTID" Type="varchar" MaxLength="50" />
+          <Property Name="COST" Type="decimal" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="tm_pm_userinfo">
+          <Key>
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="USERID" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LOGINNAME" Type="varchar" MaxLength="100" />
+          <Property Name="LOGINPWD" Type="varchar" MaxLength="100" />
+          <Property Name="MOBILEPHONE" Type="varchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="100" />
+          <Property Name="CREATEUSERID" Type="varchar" MaxLength="100" />
+          <Property Name="CREATEDATETIME" Type="datetime" Precision="0" />
+          <Property Name="EDITUSERID" Type="varchar" MaxLength="100" />
+          <Property Name="EDITDATETIME" Type="datetime" Precision="0" />
+          <Property Name="OWNERID" Type="varchar" MaxLength="100" />
+          <Property Name="ISDELETED" Type="bool" Nullable="false" />
+          <Property Name="CREATEUSERNAME" Type="varchar" MaxLength="50" />
+          <Property Name="EDITUSERNAME" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERNAME" Type="varchar" MaxLength="50" />
+          <Property Name="USERTYPE" Type="int" />
+        </EntityType>
+        <EntityContainer Name="tmpmModelStoreContainer">
+          <EntitySet Name="tm_pm_company" EntityType="Self.tm_pm_company" Schema="tmpm" store:Type="Tables" />
+          <EntitySet Name="tm_pm_department" EntityType="Self.tm_pm_department" Schema="tmpm" store:Type="Tables" />
+          <EntitySet Name="tm_pm_dotask" EntityType="Self.tm_pm_dotask" Schema="tmpm" store:Type="Tables" />
+          <EntitySet Name="tm_pm_itemreport" EntityType="Self.tm_pm_itemreport" Schema="tmpm" store:Type="Tables" />
+          <EntitySet Name="tm_pm_post" EntityType="Self.tm_pm_post" Schema="tmpm" store:Type="Tables" />
+          <EntitySet Name="tm_pm_project" EntityType="Self.tm_pm_project" Schema="tmpm" store:Type="Tables" />
+          <EntitySet Name="tm_pm_task" EntityType="Self.tm_pm_task" Schema="tmpm" store:Type="Tables" />
+          <EntitySet Name="tm_pm_user" EntityType="Self.tm_pm_user" Schema="tmpm" store:Type="Tables" />
+          <EntitySet Name="tm_pm_userinfo" EntityType="Self.tm_pm_userinfo" Schema="tmpm" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="tmpmModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="tmpmEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tm_pm_company" EntityType="tmpmModel.tm_pm_company" />
+          <EntitySet Name="tm_pm_department" EntityType="tmpmModel.tm_pm_department" />
+          <EntitySet Name="tm_pm_dotask" EntityType="tmpmModel.tm_pm_dotask" />
+          <EntitySet Name="tm_pm_itemreport" EntityType="tmpmModel.tm_pm_itemreport" />
+          <EntitySet Name="tm_pm_post" EntityType="tmpmModel.tm_pm_post" />
+          <EntitySet Name="tm_pm_project" EntityType="tmpmModel.tm_pm_project" />
+          <EntitySet Name="tm_pm_task" EntityType="tmpmModel.tm_pm_task" />
+          <EntitySet Name="tm_pm_user" EntityType="tmpmModel.tm_pm_user" />
+          <EntitySet Name="tm_pm_userinfo" EntityType="tmpmModel.tm_pm_userinfo" />
+        </EntityContainer>
+        <EntityType Name="tm_pm_company">
+          <Key>
+            <PropertyRef Name="COMPANYID" />
+          </Key>
+          <Property Name="COMPANYID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COMPANYTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COMPANRYCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="COMPANYCATEGORY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COUNTYTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COMPANYLEVEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FATHERCOMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FATHERTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FATHERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LEGALPERSON" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LINKMAN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TELNUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LEGALPERSONID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BUSSINESSLICENCENO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BUSSINESSAREA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ACCOUNTCODE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BANKID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZIPCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FAXNUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CHECKSTATE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="EDITSTATE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEUSERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEDATE" Type="DateTime" />
+          <Property Name="UPDATEUSERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+          <Property Name="CREATEPOSTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEDEPARTMENTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATECOMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERPOSTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tm_pm_department">
+          <Key>
+            <PropertyRef Name="DEPARTMENTID" />
+          </Key>
+          <Property Name="DEPARTMENTID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FATHERTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FATHERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DEPNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DEPARTMENTBOSSHEAD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DEPARTMENTDICTIONARYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DEPARTMENTFUNCTION" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="CHECKSTATE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="EDITSTATE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEUSERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEDATE" Type="DateTime" />
+          <Property Name="UPDATEUSERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+          <Property Name="CREATEPOSTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEDEPARTMENTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATECOMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERPOSTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tm_pm_dotask">
+          <Key>
+            <PropertyRef Name="TASKID" />
+          </Key>
+          <Property Name="TASKID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MODELCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MODELID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ARRIVEDATE" Type="DateTime" />
+          <Property Name="EXPIREDTIME" Type="DateTime" />
+          <Property Name="ISCLOSED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CLOSEDTIME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWENRID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATETIME" Type="DateTime" />
+          <Property Name="CREATEUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EDITTIME" Type="DateTime" />
+          <Property Name="EDITUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERPOSTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tm_pm_itemreport">
+          <Key>
+            <PropertyRef Name="TASKID" />
+          </Key>
+          <Property Name="TASKID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PRETASK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SUBMITDATE" Type="DateTime" />
+          <Property Name="SUBMITPROGRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SUBMITREMARK" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PMANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISCOMFIRM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STARTDATE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="COMFIRMDATE" Type="DateTime" />
+          <Property Name="OWENRID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATETIME" Type="DateTime" />
+          <Property Name="CREATEUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EDITTIME" Type="DateTime" />
+          <Property Name="EDITUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tm_pm_post">
+          <Key>
+            <PropertyRef Name="POSTID" />
+          </Key>
+          <Property Name="POSTID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="POSTDICTIONARYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DEPARTMENTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DEPARTMENTNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="POSTNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="POSTFUNCTION" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="POSTNUMBER" Type="Int32" />
+          <Property Name="POSTLEVEL" Type="Decimal" />
+          <Property Name="POSTCOEFFICIENT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SALARYLEVEL" Type="Decimal" />
+          <Property Name="POSTGOAL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FATHERPOSTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UNDERNUMBER" Type="Int32" />
+          <Property Name="PROMOTEDIRECTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CHANGEPOST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CHECKSTATE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="EDITSTATE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEUSERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEDATE" Type="DateTime" />
+          <Property Name="UPDATEUSERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+          <Property Name="CREATEPOSTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEDEPARTMENTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATECOMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERPOSTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tm_pm_project">
+          <Key>
+            <PropertyRef Name="PROJECTID" />
+          </Key>
+          <Property Name="PROJECTID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ORDERNUMBER" Type="Int32" />
+          <Property Name="PROJECTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FATHERPROJECTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COSTTIME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STARTDATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ENDDATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PROGRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PROJECTREMARK" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="OWENRID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERPOSTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATETIME" Type="DateTime" />
+          <Property Name="CREATEUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EDITTIME" Type="DateTime" />
+          <Property Name="EDITUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PMANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISCOMFIRM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REALFINISHDATE" Type="DateTime" />
+          <Property Name="RESULTSCORE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SUGGESTIONS" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="BUDGET" Type="Decimal" />
+          <Property Name="REALCOST" Type="Decimal" />
+        </EntityType>
+        <EntityType Name="tm_pm_task">
+          <Key>
+            <PropertyRef Name="TASKID" />
+          </Key>
+          <Property Name="TASKID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PROJECTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PRETASKID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FATHERTASKID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ORDERNUMBER" Type="Int32" />
+          <Property Name="TASKNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="COSTTIME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STARTDATE" Type="DateTime" />
+          <Property Name="ENDDATE" Type="DateTime" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PROGRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TASKREMARK" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="OWENRID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERPOSTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATETIME" Type="DateTime" />
+          <Property Name="CREATEUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EDITTIME" Type="DateTime" />
+          <Property Name="EDITUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PMANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISCOMFIRM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REALFINISHDATE" Type="DateTime" />
+          <Property Name="RESULTSCORE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SUGGESTIONS" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tm_pm_user">
+          <Key>
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="USERID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISCLOSED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="POSTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWENRID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATETIME" Type="DateTime" />
+          <Property Name="CREATEUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EDITTIME" Type="DateTime" />
+          <Property Name="EDITUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERPOSTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COST" Type="Decimal" />
+        </EntityType>
+        <EntityType Name="tm_pm_userinfo">
+          <Key>
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="USERID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LOGINNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LOGINPWD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MOBILEPHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEUSERID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEDATETIME" Type="DateTime" />
+          <Property Name="EDITUSERID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EDITDATETIME" Type="DateTime" />
+          <Property Name="OWNERID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ISDELETED" Type="Boolean" Nullable="false" />
+          <Property Name="CREATEUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EDITUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USERTYPE" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="tmpmModelStoreContainer" CdmEntityContainer="tmpmEntities2">
+          <EntitySetMapping Name="tm_pm_company">
+            <EntityTypeMapping TypeName="tmpmModel.tm_pm_company">
+              <MappingFragment StoreEntitySet="tm_pm_company">
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+                <ScalarProperty Name="EDITSTATE" ColumnName="EDITSTATE" />
+                <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+                <ScalarProperty Name="FAXNUMBER" ColumnName="FAXNUMBER" />
+                <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="BANKID" ColumnName="BANKID" />
+                <ScalarProperty Name="ACCOUNTCODE" ColumnName="ACCOUNTCODE" />
+                <ScalarProperty Name="BUSSINESSAREA" ColumnName="BUSSINESSAREA" />
+                <ScalarProperty Name="BUSSINESSLICENCENO" ColumnName="BUSSINESSLICENCENO" />
+                <ScalarProperty Name="LEGALPERSONID" ColumnName="LEGALPERSONID" />
+                <ScalarProperty Name="TELNUMBER" ColumnName="TELNUMBER" />
+                <ScalarProperty Name="LINKMAN" ColumnName="LINKMAN" />
+                <ScalarProperty Name="LEGALPERSON" ColumnName="LEGALPERSON" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="FATHERID" ColumnName="FATHERID" />
+                <ScalarProperty Name="FATHERTYPE" ColumnName="FATHERTYPE" />
+                <ScalarProperty Name="FATHERCOMPANYID" ColumnName="FATHERCOMPANYID" />
+                <ScalarProperty Name="COMPANYLEVEL" ColumnName="COMPANYLEVEL" />
+                <ScalarProperty Name="COUNTYTYPE" ColumnName="COUNTYTYPE" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="COMPANYCATEGORY" ColumnName="COMPANYCATEGORY" />
+                <ScalarProperty Name="CNAME" ColumnName="CNAME" />
+                <ScalarProperty Name="ENAME" ColumnName="ENAME" />
+                <ScalarProperty Name="COMPANRYCODE" ColumnName="COMPANRYCODE" />
+                <ScalarProperty Name="COMPANYTYPE" ColumnName="COMPANYTYPE" />
+                <ScalarProperty Name="COMPANYID" ColumnName="COMPANYID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tm_pm_department">
+            <EntityTypeMapping TypeName="tmpmModel.tm_pm_department">
+              <MappingFragment StoreEntitySet="tm_pm_department">
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+                <ScalarProperty Name="EDITSTATE" ColumnName="EDITSTATE" />
+                <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+                <ScalarProperty Name="DEPARTMENTFUNCTION" ColumnName="DEPARTMENTFUNCTION" />
+                <ScalarProperty Name="DEPARTMENTDICTIONARYID" ColumnName="DEPARTMENTDICTIONARYID" />
+                <ScalarProperty Name="DEPARTMENTBOSSHEAD" ColumnName="DEPARTMENTBOSSHEAD" />
+                <ScalarProperty Name="DEPNAME" ColumnName="DEPNAME" />
+                <ScalarProperty Name="COMPANYID" ColumnName="COMPANYID" />
+                <ScalarProperty Name="FATHERID" ColumnName="FATHERID" />
+                <ScalarProperty Name="FATHERTYPE" ColumnName="FATHERTYPE" />
+                <ScalarProperty Name="DEPARTMENTID" ColumnName="DEPARTMENTID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tm_pm_dotask">
+            <EntityTypeMapping TypeName="tmpmModel.tm_pm_dotask">
+              <MappingFragment StoreEntitySet="tm_pm_dotask">
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="EDITUSER" ColumnName="EDITUSER" />
+                <ScalarProperty Name="EDITTIME" ColumnName="EDITTIME" />
+                <ScalarProperty Name="CREATEUSER" ColumnName="CREATEUSER" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWENRID" ColumnName="OWENRID" />
+                <ScalarProperty Name="CLOSEDTIME" ColumnName="CLOSEDTIME" />
+                <ScalarProperty Name="ISCLOSED" ColumnName="ISCLOSED" />
+                <ScalarProperty Name="EXPIREDTIME" ColumnName="EXPIREDTIME" />
+                <ScalarProperty Name="ARRIVEDATE" ColumnName="ARRIVEDATE" />
+                <ScalarProperty Name="MODELID" ColumnName="MODELID" />
+                <ScalarProperty Name="MODELCODE" ColumnName="MODELCODE" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tm_pm_itemreport">
+            <EntityTypeMapping TypeName="tmpmModel.tm_pm_itemreport">
+              <MappingFragment StoreEntitySet="tm_pm_itemreport">
+                <ScalarProperty Name="EDITUSER" ColumnName="EDITUSER" />
+                <ScalarProperty Name="EDITTIME" ColumnName="EDITTIME" />
+                <ScalarProperty Name="CREATEUSER" ColumnName="CREATEUSER" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWENRID" ColumnName="OWENRID" />
+                <ScalarProperty Name="COMFIRMDATE" ColumnName="COMFIRMDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ISCOMFIRM" ColumnName="ISCOMFIRM" />
+                <ScalarProperty Name="PMANAGER" ColumnName="PMANAGER" />
+                <ScalarProperty Name="SUBMITREMARK" ColumnName="SUBMITREMARK" />
+                <ScalarProperty Name="SUBMITPROGRESS" ColumnName="SUBMITPROGRESS" />
+                <ScalarProperty Name="SUBMITDATE" ColumnName="SUBMITDATE" />
+                <ScalarProperty Name="PRETASK" ColumnName="PRETASK" />
+                <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tm_pm_post">
+            <EntityTypeMapping TypeName="tmpmModel.tm_pm_post">
+              <MappingFragment StoreEntitySet="tm_pm_post">
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+                <ScalarProperty Name="EDITSTATE" ColumnName="EDITSTATE" />
+                <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+                <ScalarProperty Name="CHANGEPOST" ColumnName="CHANGEPOST" />
+                <ScalarProperty Name="PROMOTEDIRECTION" ColumnName="PROMOTEDIRECTION" />
+                <ScalarProperty Name="UNDERNUMBER" ColumnName="UNDERNUMBER" />
+                <ScalarProperty Name="FATHERPOSTID" ColumnName="FATHERPOSTID" />
+                <ScalarProperty Name="POSTGOAL" ColumnName="POSTGOAL" />
+                <ScalarProperty Name="SALARYLEVEL" ColumnName="SALARYLEVEL" />
+                <ScalarProperty Name="POSTCOEFFICIENT" ColumnName="POSTCOEFFICIENT" />
+                <ScalarProperty Name="POSTLEVEL" ColumnName="POSTLEVEL" />
+                <ScalarProperty Name="POSTNUMBER" ColumnName="POSTNUMBER" />
+                <ScalarProperty Name="POSTFUNCTION" ColumnName="POSTFUNCTION" />
+                <ScalarProperty Name="POSTNAME" ColumnName="POSTNAME" />
+                <ScalarProperty Name="DEPARTMENTNAME" ColumnName="DEPARTMENTNAME" />
+                <ScalarProperty Name="DEPARTMENTID" ColumnName="DEPARTMENTID" />
+                <ScalarProperty Name="COMPANYID" ColumnName="COMPANYID" />
+                <ScalarProperty Name="POSTDICTIONARYID" ColumnName="POSTDICTIONARYID" />
+                <ScalarProperty Name="POSTID" ColumnName="POSTID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tm_pm_project">
+            <EntityTypeMapping TypeName="tmpmModel.tm_pm_project">
+              <MappingFragment StoreEntitySet="tm_pm_project">
+                <ScalarProperty Name="REALCOST" ColumnName="REALCOST" />
+                <ScalarProperty Name="BUDGET" ColumnName="BUDGET" />
+                <ScalarProperty Name="SUGGESTIONS" ColumnName="SUGGESTIONS" />
+                <ScalarProperty Name="RESULTSCORE" ColumnName="RESULTSCORE" />
+                <ScalarProperty Name="REALFINISHDATE" ColumnName="REALFINISHDATE" />
+                <ScalarProperty Name="ISCOMFIRM" ColumnName="ISCOMFIRM" />
+                <ScalarProperty Name="PMANAGER" ColumnName="PMANAGER" />
+                <ScalarProperty Name="EDITUSER" ColumnName="EDITUSER" />
+                <ScalarProperty Name="EDITTIME" ColumnName="EDITTIME" />
+                <ScalarProperty Name="CREATEUSER" ColumnName="CREATEUSER" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="OWENRID" ColumnName="OWENRID" />
+                <ScalarProperty Name="PROJECTREMARK" ColumnName="PROJECTREMARK" />
+                <ScalarProperty Name="PROGRESS" ColumnName="PROGRESS" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="COSTTIME" ColumnName="COSTTIME" />
+                <ScalarProperty Name="FATHERPROJECTID" ColumnName="FATHERPROJECTID" />
+                <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+                <ScalarProperty Name="ORDERNUMBER" ColumnName="ORDERNUMBER" />
+                <ScalarProperty Name="PROJECTID" ColumnName="PROJECTID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tm_pm_task">
+            <EntityTypeMapping TypeName="tmpmModel.tm_pm_task">
+              <MappingFragment StoreEntitySet="tm_pm_task">
+                <ScalarProperty Name="SUGGESTIONS" ColumnName="SUGGESTIONS" />
+                <ScalarProperty Name="RESULTSCORE" ColumnName="RESULTSCORE" />
+                <ScalarProperty Name="REALFINISHDATE" ColumnName="REALFINISHDATE" />
+                <ScalarProperty Name="ISCOMFIRM" ColumnName="ISCOMFIRM" />
+                <ScalarProperty Name="PMANAGER" ColumnName="PMANAGER" />
+                <ScalarProperty Name="EDITUSER" ColumnName="EDITUSER" />
+                <ScalarProperty Name="EDITTIME" ColumnName="EDITTIME" />
+                <ScalarProperty Name="CREATEUSER" ColumnName="CREATEUSER" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="OWENRID" ColumnName="OWENRID" />
+                <ScalarProperty Name="TASKREMARK" ColumnName="TASKREMARK" />
+                <ScalarProperty Name="PROGRESS" ColumnName="PROGRESS" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="COSTTIME" ColumnName="COSTTIME" />
+                <ScalarProperty Name="TASKNAME" ColumnName="TASKNAME" />
+                <ScalarProperty Name="ORDERNUMBER" ColumnName="ORDERNUMBER" />
+                <ScalarProperty Name="FATHERTASKID" ColumnName="FATHERTASKID" />
+                <ScalarProperty Name="PRETASKID" ColumnName="PRETASKID" />
+                <ScalarProperty Name="PROJECTID" ColumnName="PROJECTID" />
+                <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tm_pm_user">
+            <EntityTypeMapping TypeName="tmpmModel.tm_pm_user">
+              <MappingFragment StoreEntitySet="tm_pm_user">
+                <ScalarProperty Name="COST" ColumnName="COST" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="EDITUSER" ColumnName="EDITUSER" />
+                <ScalarProperty Name="EDITTIME" ColumnName="EDITTIME" />
+                <ScalarProperty Name="CREATEUSER" ColumnName="CREATEUSER" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWENRID" ColumnName="OWENRID" />
+                <ScalarProperty Name="POSTID" ColumnName="POSTID" />
+                <ScalarProperty Name="ISCLOSED" ColumnName="ISCLOSED" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tm_pm_userinfo">
+            <EntityTypeMapping TypeName="tmpmModel.tm_pm_userinfo">
+              <MappingFragment StoreEntitySet="tm_pm_userinfo">
+                <ScalarProperty Name="USERTYPE" ColumnName="USERTYPE" />
+                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+                <ScalarProperty Name="EDITUSERNAME" ColumnName="EDITUSERNAME" />
+                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+                <ScalarProperty Name="ISDELETED" ColumnName="ISDELETED" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="EDITDATETIME" ColumnName="EDITDATETIME" />
+                <ScalarProperty Name="EDITUSERID" ColumnName="EDITUSERID" />
+                <ScalarProperty Name="CREATEDATETIME" ColumnName="CREATEDATETIME" />
+                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="MOBILEPHONE" ColumnName="MOBILEPHONE" />
+                <ScalarProperty Name="LOGINPWD" ColumnName="LOGINPWD" />
+                <ScalarProperty Name="LOGINNAME" ColumnName="LOGINNAME" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

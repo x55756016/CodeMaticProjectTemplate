@@ -1,0 +1,69 @@
+﻿
+<!DOCTYPE html>
+<html ng-app="userApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>@ViewBag.Title</title>
+    @System.Web.Optimization.Styles.Render("~/Content/css")
+    @System.Web.Optimization.Scripts.Render("~/Script/bootstrap")
+</head>
+<body ng-controller="MyController">
+    <div style="width: 100%; height: 120px;">
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="background-image: url(/Content/images/top-background.png); height: 120px;">
+            <div class="container-fluid">
+                <div class="navbar-header" style="margin-left: 100px; margin-top: 20px; width:383px; height: 90px;">
+                    @*<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="True" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>*@
+                    <img src="/Content/images/top-text.png" style="width: 100%; height: 100%;" class="navbar-brand" />
+                </div>
+                <div class="pull-right" style="margin-top:40px;">
+                    <button type="button" class="btn btn-info" ng-click="logout()">注销</button>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="col-md-2" style="position: fixed; top: 120px; left: 0px;height: 100%;padding: 0; min-width:200px;">
+        <div class="navbar-default" style="padding: 0; height: 100%; border-right: 1px solid #57CFFF; border-bottom: 1px solid #57CFFF;">
+            <ul class="nav nav-list affix-top sidebar-menu">
+                <li>
+                    <div href="#system" class="nav-header menu-first collapsed" data-toggle="collapse">
+                        <i class="icon-user-md icon-large"></i> 菜单
+                    </div>
+                    <ul id="system" class="nav nav-list collapse menu-second">
+                        <li><a href="#/tm_pm_company"><i class="icon-list"></i> tm_pm_company</a></li>
+                        <li><a href="#/tm_pm_department"><i class="icon-list"></i> tm_pm_department</a></li>
+                        <li><a href="#/tm_pm_dotask"><i class="icon-list"></i> tm_pm_dotask</a></li>
+                        <li><a href="#/tm_pm_itemreport"><i class="icon-list"></i> tm_pm_itemreport</a></li>
+                        <li><a href="#/tm_pm_post"><i class="icon-list"></i> tm_pm_post</a></li>
+                        <li><a href="#/tm_pm_project"><i class="icon-list"></i> tm_pm_project</a></li>
+                        <li><a href="#/tm_pm_task"><i class="icon-list"></i> tm_pm_task</a></li>
+                        <li><a href="#/tm_pm_user"><i class="icon-list"></i> tm_pm_user</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid" style="padding: 0;">
+        <div class="row-fluid">
+            <!-- 左边菜单导航 -->
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-10">
+                <!-- 左边菜单导航 -->
+                <div id="viewContainer" ng-view on-finish-view-render></div>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+    </div>
+
+    @System.Web.Optimization.Scripts.Render("~/Script/angular")
+</body>
+</html>

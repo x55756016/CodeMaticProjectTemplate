@@ -1,0 +1,121 @@
+﻿
+<!--详情页-->
+<div class="container-fluid">
+    <div class="page-header">
+        <h4>tm_pm_user</h4>
+    </div>
+    <div class="pager">
+        <form class="form-horizontal" name="InfoForm">
+        	            <div class="form-group">
+                <label class="col-md-1 control-label" for="txtUSERID">  用户id</label>                
+                	                	<div class="col-md-5">
+                    	<input type="text" class="form-control" id="txtUSERID" ng-model="Info.USERID"  />
+                    </div>
+                                </div>
+           	            <div class="form-group">
+                <label class="col-md-1 control-label" for="txtUSERNAME">  用户名称</label>                
+                	                	<div class="col-md-5">
+                    	<input type="text" class="form-control" id="txtUSERNAME" ng-model="Info.USERNAME"  />
+                    </div>
+                                </div>
+           	            <div class="form-group">
+                <label class="col-md-1 control-label" for="txtEMAIL">  Email</label>                
+                	                	<div class="col-md-5">
+                    	<input type="text" class="form-control" id="txtEMAIL" ng-model="Info.EMAIL"  />
+                    </div>
+                                </div>
+           	            <div class="form-group">
+                <label class="col-md-1 control-label" for="txtPHONE">  手机</label>                
+                	                	<div class="col-md-5">
+                    	<input type="text" class="form-control" id="txtPHONE" ng-model="Info.PHONE"  />
+                    </div>
+                                </div>
+           	            <div class="form-group">
+                <label class="col-md-1 control-label" for="txtPASSWORD">  登录密码</label>                
+                	                	<div class="col-md-5">
+                    	<input type="text" class="form-control" id="txtPASSWORD" ng-model="Info.PASSWORD"  />
+                    </div>
+                                </div>
+           	            <div class="form-group">
+                <label class="col-md-1 control-label" for="txtISCLOSED">  是否已启用</label>                
+                	                	<div class="col-md-5">
+                    	<input type="text" class="form-control" id="txtISCLOSED" ng-model="Info.ISCLOSED"  />
+                    </div>
+                                </div>
+           	            <div class="form-group">
+                <label class="col-md-1 control-label" for="txtPOSTID">  所在岗位</label>                
+                	                	<div class="col-md-5">
+                    	<input type="text" class="form-control" id="txtPOSTID" ng-model="Info.POSTID"  />
+                    </div>
+                                </div>
+           	            <div class="form-group">
+                <label class="col-md-1 control-label" for="txtOWENRID">  所属人ID</label>                
+                	                	<div class="col-md-5">
+                    	<input type="text" class="form-control" id="txtOWENRID" ng-model="Info.OWENRID"  />
+                    </div>
+                                </div>
+           	            <div class="form-group">
+                <label class="col-md-1 control-label" for="txtOWNERDEPARTMENTID">  所属部门</label>                
+                	                	<div class="col-md-5">
+                    	<input type="text" class="form-control" id="txtOWNERDEPARTMENTID" ng-model="Info.OWNERDEPARTMENTID"  />
+                    </div>
+                                </div>
+           	            <div class="form-group">
+                <label class="col-md-1 control-label" for="txtOWNERCOMPANYID">  所属公司</label>                
+                	                	<div class="col-md-5">
+                    	<input type="text" class="form-control" id="txtOWNERCOMPANYID" ng-model="Info.OWNERCOMPANYID"  />
+                    </div>
+                                </div>
+           	            <div class="form-group">
+                <label class="col-md-1 control-label" for="txtCREATETIME">  创建时间</label>                
+                	   					<div class="col-md-5">
+   						 <div class="input-group date form_date " data-date="" data-date-format="yyyy-mm-dd" data-date-orientation="bottom" datepicker>
+                            <input id="txt_CREATETIME" class="form-control" size="10" type="text" value="" required ng-model="Info.CREATETIME" />
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+   					</div>                     
+   					            </div>
+           	            <div class="form-group">
+                <label class="col-md-1 control-label" for="txtCREATEUSER">  创建人</label>                
+                	                	<div class="col-md-5">
+                    	<input type="text" class="form-control" id="txtCREATEUSER" ng-model="Info.CREATEUSER"  />
+                    </div>
+                                </div>
+           	            <div class="form-group">
+                <label class="col-md-1 control-label" for="txtEDITTIME">  修改时间</label>                
+                	   					<div class="col-md-5">
+   						 <div class="input-group date form_date " data-date="" data-date-format="yyyy-mm-dd" data-date-orientation="bottom" datepicker>
+                            <input id="txt_EDITTIME" class="form-control" size="10" type="text" value="" required ng-model="Info.EDITTIME" />
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+   					</div>                     
+   					            </div>
+           	            <div class="form-group">
+                <label class="col-md-1 control-label" for="txtEDITUSER">  修改人</label>                
+                	                	<div class="col-md-5">
+                    	<input type="text" class="form-control" id="txtEDITUSER" ng-model="Info.EDITUSER"  />
+                    </div>
+                                </div>
+           	            <div class="form-group">
+                <label class="col-md-1 control-label" for="txtOWNERPOSTID">  所属岗位</label>                
+                	                	<div class="col-md-5">
+                    	<input type="text" class="form-control" id="txtOWNERPOSTID" ng-model="Info.OWNERPOSTID"  />
+                    </div>
+                                </div>
+           	            <div class="form-group">
+                <label class="col-md-1 control-label" for="txtCOST">  人工费用</label>                
+                	                	<div class="col-md-5">
+                    	<input type="text" class="form-control" id="txtCOST" ng-model="Info.COST"  />
+                    </div>
+                                </div>
+           	            <div class="form-group">
+                <div class="col-md-2 col-md-offset-1">
+                    <button type="button" class="btn btn-info btn-block" ng-click="GoBack()">返回</button>
+                </div>
+                <div class="col-md-2 col-md-offset-1">
+                    <button type="button" class="col-md-2 btn btn-info btn-block" ng-disabled="InfoForm.$invalid" ng-click="Save()">确定</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
